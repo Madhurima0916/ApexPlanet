@@ -1,0 +1,178 @@
+:root {
+  --bg-color: #f8f9fa;
+  --text-color: #1c1c1c;
+  --header-bg: #fff;
+  --accent: #007bff;
+  --card-bg: #ffffff;
+  --modal-bg: #fff;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --header-bg: #1f1f1f;
+  --accent: #00ffd5;
+  --card-bg: rgba(255,255,255,0.05);
+  --modal-bg: #222;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  scroll-behavior: smooth;
+  transition: background 0.4s, color 0.4s;
+}
+
+header {
+  background: var(--header-bg);
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+nav a {
+  color: var(--text-color);
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+#themeToggle {
+  background: var(--accent);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+}
+
+section {
+  padding: 50px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  border-color: var(--accent);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form input, form textarea, form button {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #2d2d2d;
+  color: white;
+  font-size: 1rem;
+}
+
+body:not(.dark) form input,
+body:not(.dark) form textarea {
+  background: #f0f0f0;
+  color: #000;
+}
+
+form button {
+  background-color: var(--accent);
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  background: var(--header-bg);
+  padding: 20px;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: var(--modal-bg);
+  color: var(--text-color);
+  padding: 30px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 500px;
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.close {
+  float: right;
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
