@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #f6d365, #fda085);
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: linear-gradient(to bottom right, #ffffff, #f3f3f3);
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.carousel {
+    position: relative;
+    margin: 20px 0;
+}
+
+.carousel img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+}
+
+.carousel button:first-of-type {
+    left: 10px;
+}
+
+.carousel button:last-of-type {
+    right: 10px;
+}
+
+.api-section {
+    margin-top: 30px;
+}
+
+button {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+@media screen and (max-width: 600px) {
+    .carousel button {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+}
