@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Madhurima | Web Developer Portfolio</title>
+  <link rel="stylesheet" href="Task5.css" />
+</head>
+<body>
+  <header>
+    <h1>Madhurima's Portfolio</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button id="themeToggle">🌙 Dark Mode</button>
+  </header>
+
+  <section id="about" class="fade-in">
+    <h2>About Me</h2>
+    <p>
+      I'm <strong>Madhurima</strong>, a passionate and creative front-end web developer currently pursuing MCA from Anurag University.
+      My expertise lies in building responsive, interactive, and optimized web applications using <strong>HTML, CSS, JavaScript</strong>, and modern UI/UX principles.
+      <br/><br/>
+      I have worked on multiple hands-on projects including task management tools, real-time weather apps, dynamic blogs, and capstone portfolios.
+      I enjoy turning complex problems into simple, elegant solutions and continuously strive to improve performance and user experience.
+      <br/><br/>
+      Technologies I work with: <span class="highlight">HTML, CSS, JS, GitHub, Responsive Design, API Integration</span>
+    </p>
+  </section>
+
+  <section id="projects" class="fade-in">
+    <h2>Projects</h2>
+    <div class="project-container" id="projectContainer"></div>
+  </section>
+
+  <section id="contact" class="fade-in">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Made with ❤️ by Madhurima &copy; 2025</p>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal" id="projectModal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+    </div>
+  </div>
+
+  <script src="Task5.js"></script>
+</body>
+</html>
