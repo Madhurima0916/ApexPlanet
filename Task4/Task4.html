@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Madhurima's Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #ffecd2, #fcb69f);
+      color: #333;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: linear-gradient(to right, #8e2de2, #4a00e0);
+      color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    nav h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+    }
+    nav ul li {
+      margin: 0 1rem;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #ffd700;
+    }
+    section {
+      padding: 3rem 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      color: #4a00e0;
+      margin-bottom: 2rem;
+    }
+    .project-list .project {
+      background: #ffffff;
+      border-left: 5px solid #ff4081;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 2rem;
+      transition: transform 0.3s;
+    }
+    .project-list .project:hover {
+      transform: translateY(-5px);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    input, textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    button {
+      padding: 0.8rem;
+      border: none;
+      background-color: #ff4081;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #e91e63;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: linear-gradient(to right, #8e2de2, #4a00e0);
+      color: white;
+      font-size: 0.9rem;
+    }
+    @media screen and (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Madhurima K</h1>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p style="font-size: 1.1rem; line-height: 1.8; text-align: center;">
+      Hi! I'm <strong>Madhurima</strong>, a passionate web developer currently pursuing my MCA at <strong>Anurag University</strong>. I enjoy crafting visually appealing and interactive web applications that offer seamless user experiences.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-list" id="project-list"></div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <form id="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Madhurima. Designed with ❤️ and passion.</p>
+  </footer>
+
+  <script>
+    const projects = [
+      {
+        title: "Student Management System",
+        description: "A web app to manage student data using HTML, CSS, JavaScript, and Firebase.",
+      },
+      {
+        title: "Portfolio Website",
+        description: "Personal responsive portfolio website with dynamic project rendering.",
+      },
+      {
+        title: "To-Do List App",
+        description: "A simple task tracker built using JavaScript and local storage.",
+      },
+      {
+        title: "Weather Forecast App",
+        description: "Fetches real-time weather using OpenWeatherMap API and displays it in a user-friendly UI.",
+      },
+    ];
+
+    const projectList = document.getElementById("project-list");
+    projects.forEach((project) => {
+      const div = document.createElement("div");
+      div.classList.add("project");
+      div.innerHTML = `<h3>${project.title}</h3><p>${project.description}</p>`;
+      projectList.appendChild(div);
+    });
+
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Thank you for your message!");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
