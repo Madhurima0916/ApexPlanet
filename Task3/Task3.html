@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task3 Web Project</title>
+    <link rel="stylesheet" href="Task3.css" />
+</head>
+<body>
+
+    <div class="container">
+        <h1>Responsive Image & API Example</h1>
+        <div class="carousel">
+            <img id="carouselImage" src="https://picsum.photos/id/1015/600/300" alt="carousel" />
+            <button onclick="prevImage()">⟨</button>
+            <button onclick="nextImage()">⟩</button>
+        </div>
+
+        <div class="api-section">
+            <h2>Get a Random Joke</h2>
+            <button onclick="fetchJoke()">Fetch Joke</button>
+            <p id="jokeText">Click the button to get a joke.</p>
+        </div>
+    </div>
+
+    <script src="Task3.js"></script>
+</body>
+</html>
